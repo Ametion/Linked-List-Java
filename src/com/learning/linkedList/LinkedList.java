@@ -69,6 +69,11 @@ public class LinkedList<T> {
 
         while(true){
             if(i == index){
+                if(curr.next == null){
+                    RemoveLast();
+                    return;
+                }
+
                 curr.data = curr.next.data;
                 curr.next = curr.next.next;
 
@@ -79,6 +84,22 @@ public class LinkedList<T> {
             curr = curr.next;
             i++;
         }
+    }
+
+    public void RemoveFirst(){
+        head = head.next;
+        size--;
+    }
+
+    public void RemoveLast(){
+        var curr = head;
+
+        while(curr.next.next != null){
+            curr = curr.next;
+        }
+
+        curr.next = null;
+        size--;
     }
 }
 
