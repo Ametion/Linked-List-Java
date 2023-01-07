@@ -13,5 +13,8 @@ public class Main {
 
         list.RemoveLast();
 
+        for (var el: list) {
+            System.out.println(el);
+        }
     }
 }

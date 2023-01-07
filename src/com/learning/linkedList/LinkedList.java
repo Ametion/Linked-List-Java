@@ -1,6 +1,8 @@
 package com.learning.linkedList;
 
-public class LinkedList<T> {
+import java.util.Iterator;
+
+public class LinkedList<T> implements Iterable<T> {
     private Node<T> head;
     private int size;
 
@@ -101,9 +103,32 @@ public class LinkedList<T> {
         curr.next = null;
         size--;
     }
+
+    public void Clear(){
+        head = null;
+    }
+
+    public Iterator<T> iterator() {
+        return new LinkedListIterator();
+    }
+
+    private class LinkedListIterator implements Iterator<T> {
+        private Node<T> current = head;
+
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        public T next() {
+            T data = current.data;
+            current = current.next;
+            return data;
+        }
+    }
+
+    private class Node <T>{
+        public T data;
+        public Node<T> next;
+    }
 }
 
-class Node <T>{
-    public T data;
-    public Node<T> next;
-}
