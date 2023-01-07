@@ -88,6 +88,25 @@ public class LinkedList<T> implements Iterable<T> {
         }
     }
 
+    public void Remove(T data){
+        var curr = head;
+        var i = 0;
+
+        if(head.data.equals(data)){
+            RemoveFirst();
+            return;
+        }
+
+        while(true){
+            if(curr.next.data.equals(data)){
+                curr.next = curr.next.next;
+                return;
+            }
+
+            curr = curr.next;
+        }
+    }
+
     public void RemoveFirst(){
         head = head.next;
         size--;
