@@ -10,17 +10,5 @@ public class Main {
         list.Add(76);
         list.Add(999);
         list.Add(45);
-
-        for (var el: list) {
-            System.out.println(el);
-        }
-
-        list.Remove(45);
-
-        System.out.println("______________________________");
-
-        for (var el: list) {
-            System.out.println(el);
-        }
     }
 }

@@ -127,6 +127,27 @@ public class LinkedList<T> implements Iterable<T> {
         head = null;
     }
 
+    public Boolean Contains(T data){
+        var curr = head;
+        var i = 0;
+
+        if(head.data.equals(data)){
+            return true;
+        }
+
+        while(true){
+            if(curr.next == null){
+                return false;
+            }
+
+            if(curr.next.data.equals(data)){
+                return true;
+            }
+
+            curr = curr.next;
+        }
+    }
+
     public Iterator<T> iterator() {
         return new LinkedListIterator();
     }
