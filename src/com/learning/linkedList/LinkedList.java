@@ -22,7 +22,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public T Get(int index){
-        var curr = head;
+        Node<T> curr = head;
         var i = 0;
 
         while(true){
@@ -44,7 +44,7 @@ public class LinkedList<T> implements Iterable<T> {
             return;
         }
 
-        var curr = head;
+        Node<T> curr = head;
 
         while(true){
             if(curr.next == null){
@@ -60,7 +60,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public void RemoveAt(int index){
-        var curr = head;
+        Node<T> curr = head;
         var i = 0;
 
         if(index == 0){
@@ -89,7 +89,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public void Remove(T data){
-        var curr = head;
+        Node<T> curr = head;
         var i = 0;
 
         if(head.data.equals(data)){
@@ -113,7 +113,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public void RemoveLast(){
-        var curr = head;
+        Node<T> curr = head;
 
         while(curr.next.next != null){
             curr = curr.next;
@@ -128,7 +128,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     public Boolean Contains(T data){
-        var curr = head;
+        Node<T> curr = head;
         var i = 0;
 
         if(head.data.equals(data)){
@@ -171,4 +171,3 @@ public class LinkedList<T> implements Iterable<T> {
         public Node<T> next;
     }
 }
-
